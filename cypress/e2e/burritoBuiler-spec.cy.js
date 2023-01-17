@@ -36,7 +36,7 @@ describe('Visiting the Burrito Builder page', () => {
       .and('contain', 'queso fresco');
   });
   it('When a user visits the page, they can view the Form with the proper inputs', () => {
-    cy.get('form').get('input[name="name"]').type('text');
+    cy.get('form').get('input[name="name"]').type('text').should("have.value", "text");
 
     cy.get('form').get('button').contains('beans');
     cy.get('form').get('button').contains('steak');
